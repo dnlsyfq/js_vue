@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product App</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+
+        <div class="nav-bar"></div>
+
+        <div id="app">
+            <div class="product">
+                <div class="product-image">
+                    <img v-bind:src="image">
+                </div>
+            
+
+                <div class="product-info">
+                    <h1>{{product}}</h1>
+                    <a :href="link" target="_blank">More products like this </a>
+                    <p v-if="inStock >= 100">Many</p>
+                    <p v-else-if="inStock < 100 && inStock > 30">Almost Clear</p>
+                    <p v-else>Sold Out</p>
+                    <p v-if="onSale">On Sale!</p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
