@@ -80,6 +80,10 @@ app.product = 'Clocks' // will change above value to new value
     }
 })
 ```
+
+```
+<p v-show="inStock">In Stock</p>
+```
 > for real case 
 
 ```
@@ -112,7 +116,253 @@ data : {
 ```
 
 ```
-// html 
+<div id="app">
+    <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+</div>
 
+    <!-- Import App -->
+<script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+
+const app = Vue.createApp({
+    data() {
+        return {
+            product: 'Socks',
+            image: './assets/images/socks_blue.jpg',
+            inStock: true,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+                {id:2234,color:'green'},
+                {id:2235,color:'blue'}
+            ]
+        }
+    }
+})
+```
+
+### Event Handling
+@mouseover
+@click
+
+* Event Click ( No Function )
+```
+ <div id="app">
+      <div class="nav-bar"></div>
+
+      <div class="cart">Cart({{ cart }})</div>
+      
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <img v-bind:src="image">
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+            <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
+            <ul>
+              <li v-for="detail in details">{{ detail }}</li>
+            </ul>
+            <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+            <button class="button" v-on:click="cart +=1">Add to Cart</button>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+```
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            image: './assets/images/socks_blue.jpg',
+            inStock: true,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+              { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+              { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+
+})
+```
+
+* Event Click ( with v on or short hand with @click )
+```
+ <div id="app">
+      <div class="nav-bar"></div>
+
+      <div class="cart">Cart({{ cart }})</div>
+      
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <img v-bind:src="image">
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+            <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
+            <ul>
+              <li v-for="detail in details">{{ detail }}</li>
+            </ul>
+            <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+            <button class="button" v-on:click="addToCart">Add to Cart</button>
+            //<button class="button" @click="addToCart">Add to Cart</button>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+```
 
 ```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            image: './assets/images/socks_blue.jpg',
+            inStock: true,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+              { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+              { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+    methods: {
+        addToCart(){
+            this.cart += 1
+        }
+    }
+})
+
+```
+### Class & Style Binding
+
+```
+  <div id="app">
+      <div class="nav-bar"></div>
+
+      <div class="cart">Cart({{ cart }})</div>
+      
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <img v-bind:src="image">
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+            <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
+            <ul>
+              <li v-for="detail in details">{{ detail }}</li>
+            </ul>
+
+            <div 
+              v-for="variant in variants" 
+              :key="variant.id" 
+              @mouseover="updateImage(variant.image)" 
+              class="color-circle"
+              :style="{backgroundColor: variant.color}"> // camelcase
+              :style="{'background-color':variant.color}"> //kebabcase
+            </div>
+            <button class="button" @click="addToCart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+```
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            brand: 'Vue Mastery',
+            image: './assets/images/socks_blue.jpg',
+            inStock: false,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+              { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+              { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        },
+        updateImage(variantImage) {
+            this.image = variantImage
+        }
+    }
+})
+
+```
+
+* style binding 
+
+```
+<div :style="styles"></div>
+```
+
+```
+data(){
+    return {
+        styles:{
+            color:'red',
+            fontSize:'14px'
+        }
+    }
+}
+```
+
+### class binding Ternary operators 
+
+```
+<div :class="[isActive ? activeClass : '']"> </div>
+```
+```
+data(){
+    return {
+        isActive:true
+    }
+}
+```
+
+
+
