@@ -2,10 +2,147 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec4892c1-54ab-46e0-9928-21424d9e07e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/js_vue.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_02/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_02/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_02/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_02/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_02/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_02/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_03/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_03/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_03/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_03/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_03/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_03/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_04/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_04/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_04/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_04/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_04/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_04/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_05/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_05/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_05/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_05/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_05/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_05/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_06/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_06/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_06/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_06/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_06/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch1/01_06/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_01/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_01/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_01/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_01/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_02/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_02/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_02/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_02/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_03/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_03/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_03/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_03/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_04/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_04/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_04/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_04/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_05/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_05/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_05/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch2/02_05/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_01/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_01/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_01/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_01/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_01/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_01/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_02/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_02/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_02/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_02/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_02/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_02/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_03/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_03/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_03/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_03/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_03/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_03/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_04/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_04/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_04/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_04/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_04/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_04/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_05/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_05/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_05/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_05/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_05/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch3/03_05/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_01/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_01/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_01/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_01/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_01/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_01/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_02/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_02/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_02/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_02/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_02/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_02/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_03/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_03/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_03/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_03/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_03/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_03/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_04/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_04/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_04/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_04/end/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_04/end/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_04/end/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/begin/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/begin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/begin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_05/end/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/begin/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/src/components/DeckName.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise Files/ch4/04_06/end/src/main.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +183,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652244404640</updated>
       <workItem from="1652244405905" duration="4111000" />
+      <workItem from="1658463281674" duration="566000" />
     </task>
     <servers />
   </component>
@@ -62,5 +200,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
