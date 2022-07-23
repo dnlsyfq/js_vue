@@ -572,9 +572,332 @@ const app = Vue.createApp({
 
 * index.html
 ```
+  <div class="cart">Cart({{ cart }})</div>
+
+    // method 1
+<!--        <button class="button" v-on:click="cart += 1">Add to Cart</button>-->
+    // method 2
+<!--        <button class="button" v-on:click="addToCart">Add to Cart</button>-->
+    // method 3
+            <button class="button" @click="addToCart">Add to Cart</button>
+            <button class="button" @click="removeFromCart">Remove Cart</button>
+
+<!-- Import App -->
+<script src="./main.js"></script>
+
+<!-- Mount App -->
+<script>
+  const mountedApp = app.mount('#app')
+</script>
 ```
 
 * main.js
 ```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            image: './assets/images/socks_blue.jpg',
+            inStock: true,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+    methods: {
+        addToCart(){
+            this.cart += 1
+        },
+        updateImage(variantImage){
+            this.image = variantImage
+        },
+        removeFromCart(){
+            if(this.cart >= 1) {
+                this.cart -= 1
+            }
+        },
+    }
+})
+```
+
+### html class and style binding
+
+// style binding
+// method 1 via inline
+
+* index.html 
+```
+        <div v-for="variant in variants" :key="variant.id"
+             @mouseover="updateImage(variant.image)"
+             class="color-circle"
+             :style="{backgroundColor:variant.color}">
+        </div>
+```
+
+* main.js
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            brand: 'Vue Mastery',
+            image: './assets/images/socks_blue.jpg',
+            inStock: false,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        },
+        updateImage(variantImage) {
+            this.image = variantImage
+        }
+    }
+})
+
+```
+// style binding
+// method 2 via data object
+
+* index.html
+```
+<div style="color: red; font-size: 14px"></div>
+```
+
+* main.js
+```
+data(){
+    return {
+        styles:{
+            color:'red',
+            fontSize:'14px'
+        }
+    }
+}
+```
+
+// class binding
+// <img v-bind:src="image" :class="{ 'out-of-stock-img' : !inStock}">
+
+* html
+```
+<button class="button" :class="{disabledButton: !inStock }" :disabled="!inStock" @click="addToCart">Add to Cart</button>
+```
+
+* css
+```
+.disabledButton {
+  background-color: #d8d8d8;
+  cursor: not-allowed;
+}
+```
+
+* main.js
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            brand: 'Vue Mastery',
+            image: './assets/images/socks_blue.jpg',
+            inStock: false,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        },
+        updateImage(variantImage) {
+            this.image = variantImage
+        }
+    }
+})
+
+```
+
+// multiple class binding
+
+* html
+```
+<div class="color-circle" :class="{active: activeClass}"></div>
+
+// <div class="color-circle active"></div>
+```
+
+* js
+```
+data(){
+    return {
+        activeClass:true
+    }
+}
+```
+
+// class binding with ternary 
+
+* html
+```
+    <div :class="[isActive ? activeClass : '']"></div>
+    // <div class="activeClass"></div>
+```
+
+* js
+```
+data(){
+    return {
+        isActive:true
+    }
+}
+```
+
+### computed properties
+
+* index
+```
+<h1>{{ brand + ' ' + product }}</h1>
+<h1>{{ title }}</h1>
+
+```
+
+* main.js
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            brand: 'Vue Mastery',
+            image: './assets/images/socks_blue.jpg',
+            inStock: false,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        },
+        updateImage(variantImage) {
+            this.image = variantImage
+        },
+    },
+        computed: {
+            title(){
+                return this.brand + ' ' + this.product
+            }
+        }
+})
+
+```
+
+// computed interactively with all
+
+* indxe.html
+
+```
+<div id="app">
+  <div class="nav-bar"></div>
+
+  <div class="cart">Cart({{ cart }})</div>
+
+  <div class="product-display">
+    <div class="product-container">
+      <div class="product-image">
+        <img v-bind:src="image" :class="{ 'out-of-stock-img' : !inStock}">
+      </div>
+      <div class="product-info">
+<!--        <h1>{{ brand + ' ' + product }}</h1>-->
+        <h1>{{ title }}</h1>
+
+        <p v-if="inStock">In Stock</p>
+        <p v-else>Out of Stock</p>
+        <ul>
+          <li v-for="detail in details">{{ detail }}</li>
+        </ul>
+
+        <div v-for="(variant,index) in variants" :key="variant.id"
+             @mouseover="updateVariant(index)"
+             class="color-circle"
+             :style="{backgroundColor:variant.color}">
+        </div>
+        <button class="button" :class="{disabledButton: !inStock }" :disabled="!inStock" @click="addToCart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Import App -->
+<script src="./main.js"></script>
+
+<!-- Mount App -->
+<script>
+  const mountedApp = app.mount('#app')
+</script>
+```
+
+
+* main.js
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            brand: 'Vue Mastery',
+            // image: './assets/images/socks_blue.jpg',
+            selectedVariant:0,
+            onSale:true,
+            // inStock: false,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg',quantity:50 },
+                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg',quantity:0 },
+            ]
+        }
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        },
+        updateVariant(index) {
+            this.selectedVariant = index
+            console.log(this.selectedVariant);
+        }
+    },
+    computed: {
+        title(){
+            if(this.onSale){
+                return this.brand + ' ' + this.product + ' is on sale'
+            } else {
+                return this.brand + ' ' + this.product
+            }
+
+        },
+        image(){
+            return this.variants[this.selectedVariant].image
+        },
+        inStock(){
+            return this.variants[this.selectedVariant].quantity
+        }
+    }
+})
 
 ```
