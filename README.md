@@ -364,5 +364,217 @@ data(){
 }
 ```
 
+---
 
+# Vue 3
 
+### Runs Javascript in Vue 
+
+```
+<p>{{ product }}</p>
+<p>{{ firstName + ' ' + lastName }}</p>
+<p>{{ clicked ? true : false }}</p>
+<p>{{ message.method() }} </p>
+```
+
+### Vue Intro
+
+* html
+```
+<script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+<body>
+    <div id="app">
+      <h1>{{product}}</h1>
+      <p>{{description}}</p>
+    </div>
+
+    <!-- Import App-->
+    <script src="main.js"></script>
+
+    <!-- Mount App-->
+    <script>
+      const mountApp = app.mount('#app')
+      // mountApp.product = 'Sandals'
+    </script>
+</body>
+```
+
+* main.js
+```
+const app = Vue.createApp({
+    data(){
+        return {
+            product:'Socks',
+            description:'Sleeve For Feet'
+        }
+    }
+})
+```
+
+### Attribute binding
+
+* v-bind: // dynamicall bind an attribute to an expression
+* bind is the src
+* expression is the "image"
+
+* html
+```
+  <div id="app">
+    <div class="nav-bar"></div>
+
+    <div class="product-display">
+      <div class="product-container">
+        <div class="product-image">
+          <!-- image goes here -->
+          <img v-bind:src="image">
+          <img :src="image">
+        </div>
+        <div class="product-info">
+          <h1>{{ product }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import App -->
+  <script src="./main.js"></script>
+
+  <!-- Mount App -->
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+```
+
+* main.js
+```
+const app = Vue.createApp({
+    data(){
+        return {
+            product:'Socks',
+            image:'./assets/images/socks_green.jpg',
+            description:'Sleeve For Feet'
+        }
+    }
+})
+```
+
+* shorthand 
+```
+          <img v-bind:src="image">
+          <img :src="image">
+
+          <img :alt="description">
+          <img :href="url">
+          <img :class="isActive">
+          <span :style="isActive">
+          <span :disabled="isActive">
+```
+
+### Conditional Rendering
+
+* html
+```
+<div id="app">
+  <div class="nav-bar"></div>
+
+  <div class="product-display">
+    <div class="product-container">
+      <div class="product-image">
+        <img v-bind:src="image">
+      </div>
+      <div class="product-info">
+        <h1>{{ product }}</h1>
+
+<!--        method 1-->
+        <p v-if="inStock">In Stock</p>
+        <p v-else>Out of Stock</p>
+
+<!--        method 2: toggle on off -->
+        <p v-show="inStock">In Stock</p>
+
+<!--        method 3-->
+        <p v-if="inventory > 10">In Stock</p>
+        <p v-else-if="inventory <= 10 && inventory >0">Almost Out of Stock</p>
+        <p v-else>Out of Stock</p>
+
+        <p v-if="onSale">On Sale</p>
+        <p v-else>No Sale</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Import App -->
+<script src="./main.js"></script>
+
+<!-- Mount App -->
+<script>
+  const mountedApp = app.mount('#app')
+</script>
+```
+
+* main.js
+```
+const app = Vue.createApp({
+    data(){
+        return {
+            product:'Socks',
+            image:'./assets/images/socks_green.jpg',
+            description:'Sleeve For Feet',
+            url: 'https://www.vuemastery.com/',
+            inStock:false,
+            inventory: 8,
+            onSale:true,
+            details:['50% cotton','30% wool','20% polyester']
+        }
+    }
+})
+```
+
+### loop list rendering
+
+* index.html
+```
+        <ul>
+          <li v-for="detail in details">{{detail}}</li>
+        </ul>
+        <div v-for="variant in variants" :key="variant.id">{{variant.color}}</div>
+        <ul>
+          <li v-for="(size,index) in sizes" :key="index">{{size}}</li>
+        </ul>
+```
+
+* main.js
+```
+const app = Vue.createApp({
+    data(){
+        return {
+            product:'Socks',
+            image:'./assets/images/socks_green.jpg',
+            description:'Sleeve For Feet',
+            url: 'https://www.vuemastery.com/',
+            inStock:false,
+            inventory: 8,
+            onSale:true,
+            details:['50% cotton','30% wool','20% polyester'],
+            sizes: ['S', 'M', 'L', 'XL'],
+            variants:[
+                {id:2234,color:'green'},
+                {id:2235,color:'blue'}
+            ]
+        }
+    }
+})
+```
+
+### event handling
+
+* index.html
+```
+```
+
+* main.js
+```
+
+```
