@@ -1,3 +1,10 @@
+#### CLI
+```
+npm install -g @vue/cli
+vue --version
+```
+
+
 * Create Instance 
 
 ```
