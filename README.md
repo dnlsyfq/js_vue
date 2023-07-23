@@ -4,8 +4,19 @@ npm install -g @vue/cli
 vue --version
 ```
 
+### CDN
+defer : make sure that the page is loaded and ready to hook up to Vue before we actually load Vue.
+```
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+```
 
-* Create Instance 
+* Create Instance
+
+```
+const app = new Vue ({
+    el: '#app' // el key to the options object and made the value '#app', a CSS selector that will target an element with an ID, #, of app.
+})
+```
 
 ```
 <div id="app">
@@ -16,6 +27,178 @@ var app = new Vue({ // instance
     // options 
 })
 ```
+
+```
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Vue App HTML Code -->
+  </div>
+</body>
+```
+
+```
+Note: We must import our Vue app code after the <script> that loads Vue.js. Otherwise, we would not yet have access to the Vue library in app.js, making it impossible to create a Vue app. This is also why we add defer to both elements — to ensure Vue has fully loaded when we go to make our Vue app.
+```
+
+### Add data to HTML
+```
+const app = new Vue({
+  el: '#app',
+  data: {
+    username: 'CoderInTraining',
+    newTweet: '',
+    tweets: [
+      'Started learning to code today. Wish me luck!', 
+      'Okay, I learned HTML, CSS, and JavaScript. But, how do I combine them together?? Send help.', 
+      'Today I start learning Vue. I got this.'
+    ],
+    bio: 'Excited future software engineer.'
+  }
+});
+```
+
+```
+```
+<div id="app">
+  <h2>Hello, {{ username }}</h2>
+</div>
+---
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Vue View</title>
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <h1>THE VUE VIEW</h1>
+    <div class="user">
+      <div class="user-information">
+        <div class="image-container">
+          <img src="https://content.codecademy.com/courses/what-is-vue/profile.jpeg" alt="profile picture">
+        </div>
+        <h3>{{ username }}</h3>
+      </div>
+      <div class="user-bio">
+        <em>Bio: </em> {{ bio }}
+      </div>
+    </div>
+    <div class="tweets">
+      <div class="tweet">
+        <h3>{{ username }}</h3>
+        <p>{{ tweets[0] }}</p>
+      </div>
+      <div class="tweet">
+        <h3>{{ username }}</h3>
+        <p>{{ tweets[1] }}</p>
+      </div>
+      <div class="tweet">
+        <h3>{{ username }}</h3>
+        <p>{{ tweets[2] }}</p>
+      </div>
+    </div>
+    <div class="settings">
+      <h2>Settings</h2>
+      <label for="username">Username</label>
+      <input type="text" value="username" placeholder="Username" />
+      <label for="bio">Bio</label>
+      <textarea value="bio" placeholder="Bio"></textarea>
+      <label for="tweet">New Tweet</label>
+      <div class="new-tweet">
+        <input type="text" value="tweet" placeholder="New Tweet" />
+        <button>Add Tweet</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+```
+
+### Directives
+
+```
+<button v-if="userIsLoggedIn">Log Out</button>
+<button v-if="!userIsLoggedIn">Log In</button>
+```
+
+```
+<ul>
+  <li v-for="todo in todoList">{{ todo }}</li>
+</ul>
+```
+
+* v-model can be added to any form field and hooked up to our Vue app’s data. Modifying the form field will then automatically modify the specified Vue app data. The above input field will display the current value of username on the Vue app’s data object and will change the value of username if the user modifies the value in the field
+```
+<input v-model="username" />
+```
+
+* v-if
+   the bio section so that the section only displays if bio exists
+```
+      <div class="user-bio" v-if="bio">
+        <em>Bio: </em> {{ bio }}
+      </div>
+```
+
+* v-for
+tweets section so that all tweets will be displayed, not just the first three
+```
+   <div class="tweets">
+      <div class="tweet" v-for="tweet in tweets">
+        <h3>{{ username }}</h3>
+        <p>{{ tweet }}</p>
+      </div>
+    </div>
+```
+
+* v-model
+```
+    <div class="settings">
+      <h2>Settings</h2>
+      <label for="username">Username</label>
+      <input type="text" value="username" placeholder="Username" v-model="username" />
+      <label for="bio">Bio</label>
+      <textarea value="bio" placeholder="Bio" v-model="bio"></textarea>
+      <label for="tweet">New Tweet</label>
+      <div class="new-tweet">
+        <input type="text" value="tweet" placeholder="New Tweet" />
+        <button>Add Tweet</button>
+      </div>
+    </div>
+```
+
+```
+const app = new Vue({
+  el: '#app',
+  data: {
+    newTweet: '',
+    tweets: [
+      'Started learning to code today. Wish me luck!', 
+      'Okay, I learned HTML, CSS, and JavaScript. But, how do I combine them together?? Send help.', 
+      'Today I start learning Vue. I got this.'
+    ]
+  }
+});
+```
+
+```
+      <label for="tweet">New Tweet</label>
+      <div class="new-tweet">
+        <input type="text" value="tweet" placeholder="New Tweet" v-model="newTweet"/>
+        <button v-on:click="tweets.push(newTweet)">Add Tweet</button>
+      </div>
+```
+
+---
 
 * Instance property 
 > to create relationship between main.js and html , from instance gives property like el , data 
