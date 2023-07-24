@@ -198,6 +198,100 @@ const app = new Vue({
       </div>
 ```
 
+* Components
+
+js/components/Tweet.js
+js/app.js
+css/style.css
+index.html
+  ```
+const Tweet = Vue.component('tweet', {
+     props: ['message'],
+     template: '<div class="tweet"><h3>CoderInTraining</h3><p>{{ message }}</p></div>'
+});
+  ```
+
+* v-bind
+Finally, let’s pass in the value of data‘s username to the author prop on our component using the v-bind directive.
+
+v-bind takes a value from the Vue app’s data object and uses it as the value of the specified component prop.
+
+
+```
+//html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Vue View</title>
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+  <script src="./js/components/Tweet.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <h1>THE VUE VIEW</h1>
+    <div class="user">
+      <div class="user-information">
+        <div class="image-container">
+          <img src="https://content.codecademy.com/courses/what-is-vue/profile.jpeg" alt="profile picture">
+        </div>
+        <h3>{{ username }}</h3>
+      </div>
+      <div class="user-bio" v-if="bio">
+        <em>Bio: </em> {{ bio }}
+      </div>
+    </div>
+    <div class="tweets">
+      <tweet v-for="tweet in tweets" 
+             v-bind:message="tweet"
+             v-bind:author="username"
+             ></tweet>
+    </div>
+    <div class="settings">
+      <h2>Settings</h2>
+      <label for="username">Username</label>
+      <input type="text" value="username" placeholder="Username" v-model="username" />
+      <label for="bio">Bio</label>
+      <textarea value="bio" placeholder="Bio" v-model="bio"></textarea>
+      <label for="tweet">New Tweet</label>
+      <div class="new-tweet">
+        <input type="text" value="tweet" placeholder="New Tweet" v-model="newTweet" />
+        <button v-on:click="tweets.push(newTweet)">Add Tweet</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+```
+
+```
+// app.js
+const app = new Vue({
+  el: '#app',
+  data: {
+    username: 'CoderInTraining',
+    newTweet: '',
+    tweets: [
+      'Started learning to code today. Wish me luck!', 
+      'Okay, I learned HTML, CSS, and JavaScript. But, how do I combine them together?? Send help.', 
+      'Today I start learning Vue. I got this.'
+    ],
+    bio: 'Excited future front-end  engineer.'
+  }
+});
+```
+
+```
+// Tweet.js
+const Tweet = Vue.component('tweet', {
+ props: ['message','author'],
+ template: '<div class="tweet"><h3>{{ author }}</h3><p>{{ message }}</p></div>'
+});
+```
+
 ---
 
 * Instance property 
