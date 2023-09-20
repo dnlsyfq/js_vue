@@ -1292,3 +1292,15 @@ app.component('product-display',{
 
 ### Props , custom attribute for passing data into component
 
+### Directives
+
+```
+directive="expression"
+
+v-if="isOpen"
+v-bind:id="uniqId"
+v-on:click="handleClick"
+v-on:click.prevent="handleClick"
+v-bind:attributeName="expression"
+```
+
