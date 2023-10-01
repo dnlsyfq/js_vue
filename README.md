@@ -1303,4 +1303,22 @@ v-on:click="handleClick"
 v-on:click.prevent="handleClick"
 v-bind:attributeName="expression"
 ```
+### Data 
 
+* html
+```
+<div id="app">
+  <p>You have been studying {{ language }} for {{ hoursStudied }} hours</p>
+</div>
+```
+
+* js
+```
+const app = new Vue({
+  el: '#app',
+  data: {
+    language: 'Spanish',
+    hoursStudied: 274
+  }
+});
+```
