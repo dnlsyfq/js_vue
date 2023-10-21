@@ -1322,3 +1322,95 @@ const app = new Vue({
   }
 });
 ```
+
+---
+
+# Form
+
+## Text, Textarea, and Select Bindings
+
+```
+<input type="text" v-model="username" />
+
+const app = new Vue({ 
+  el: '#app',
+  data: { username: 'Michael' } 
+});
+```
+
+## Radio Button Bindings
+
+```
+<legend>How was your experience?</legend>
+
+<input type="radio" id="goodReview" value="good" v-model="experienceReview" />
+<label for="goodReview">Good</label>
+
+<input type="radio" id="neutralReview" value="neutral" v-model="experienceReview" />
+<label for="neutralReview">Neutral</label>
+
+<input type="radio" id="badReview" value="bad" v-model="experienceReview" />
+<label for="badReview">Bad</label>
+
+const app = new Vue({ 
+  el: '#app', 
+  data: { experienceReview: '' } 
+});
+```
+
+## Array Checkbox Bindings
+
+```
+<legend>Which of the following features would you like to see added?</legend>
+
+<input type="checkbox" id="search-bar" value="search" v-model="requestedFeatures">
+<label for="search-bar">Search Bar</label>
+
+<input type="checkbox" id="ads" value="ads" v-model="requestedFeatures">
+<label for="ads">Ads</label>
+
+<input type="checkbox" id="new-content" value="content" v-model="requestedFeatures">
+<label for="new-content">New Content</label>
+```
+
+```
+const app = new Vue({ 
+  el: '#app', 
+  data: { requestedFeatures: [] } 
+});
+```
+
+## Boolean Checkbox Bindings
+```
+<legend>Would you recommend this site to a friend?</legend>
+<input type="checkbox" v-model="wouldRecommend" />
+```
+
+```
+const app = new Vue({ 
+  el: '#app',
+  data: { wouldRecommend: false } 
+});
+```
+
+## Form Event Handlers
+* Default
+```
+<form v-on:reset="resetForm">
+  ...
+  <button type="reset">Reset</button>
+</form>
+```
+* Short Cut
+```
+<form @reset="resetForm">
+  ...
+</form>
+```
+
+```
+const app = new Vue({ 
+  el: '#app', 
+  methods: { resetForm: function() { ... } }
+});
+```
