@@ -110,6 +110,124 @@ git checkout <branch-name>
 <p v-show="inStock">In Stock</p>
 ```
 
+* loops
+
+list  
+```
+ details: ['50% cotton', '30% wool', '20% polyester']
+
+  <ul>
+    <li v-for="detail in details">{{ detail }}</li>
+  </ul>
+```
+
+object
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            product: 'Socks',
+            image: './assets/images/socks_blue.jpg',
+            inStock: true,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants:[
+                {id:2234,color:'green'},
+                {id:2235,color:'blue'}
+            ]
+        }
+    }
+})
+
+// method 1
+
+          <ul>
+            <li v-for="variant in variants">{{ variant.color }}</li>
+          </ul>
+
+// method 2
+
+          <ul>
+            <li v-for="variant in variants" :key="variant.id">{{ variant.color }}</li>
+          </ul>
+
+
+```
+
+
+---
+
+### Event Handling
+
+on click
+```
+ <body>
+    <div id="app">
+      <div class="cart">Cart({{ cart }})</div>
+      <button class="button" v-on:click="addToCart">Add to Cart</button>
+      <button class="button" @click="addToCart">Add to Cart</button> // short hands
+```
+
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            image: './assets/images/socks_blue.jpg',
+            inStock: true,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+              { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+              { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+    methods:{
+        addToCart(){
+            this.cart += 1
+        }
+    }
+})
+```
+
+---
+
+hover
+```
+ <body>
+    <div id="app">
+        <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
+
+```
+
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            cart:0,
+            product: 'Socks',
+            image: './assets/images/socks_blue.jpg',
+            inStock: true,
+            details: ['50% cotton', '30% wool', '20% polyester'],
+            variants: [
+              { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+              { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            ]
+        }
+    },
+    methods:{
+        addToCart(){
+            this.cart += 1
+        },
+        updateImage(variantImage){
+            this.image = variantImage
+        }
+    }   
+})
+```
+
+---
+
 ```
 <!DOCTYPE html>
 <html>
