@@ -15,13 +15,49 @@
                 </div>
             
 
+
                 <div class="product-info">
                     <h1>{{product}}</h1>
                     <a :href="link" target="_blank">More products like this </a>
-                    <p v-if="inStock >= 100">Many</p>
-                    <p v-else-if="inStock < 100 && inStock > 30">Almost Clear</p>
-                    <p v-else>Sold Out</p>
-                    <p v-if="onSale">On Sale!</p>
+                    <p v-if="inStock">Available</p>
+                    <p v-else :class="{outOfStock:!inStock}">Sold Out</p>
+                    <!-- <p v-else-if="inStock < 100 && inStock > 30">Almost Clear</p> -->
+                    
+                    <!-- <p v-if="onSale">On Sale!</p> -->
+
+
+
+                    <ul>
+                        <li v-for="detail in details">{{detail}}</li>
+                    </ul>
+
+                    
+                    <!-- <div v-for="variant in variants" :key="variant.variantId">
+                        <p @mouseover="updateProduct(variant.variantImage)">
+                            {{variant.variantColor}}
+                        </p>
+                    </div> -->
+                    
+                    <!-- style binding -->
+                    <div v-for="variant in variants" 
+                        :key="variant.variantId"
+                        class="color-box"
+                        :style="{backgroundColor: variant.variantColor}"
+                        @mouseover="updateProduct(variant.variantImage)">
+                    </div>
+
+                    <button v-on:click="addCart" 
+                            :disabled="!inStock"
+                            :class="{disabledButton: !inStock}">Add cart </button>
+                    <button v-on:click="removeCart">Remove cart </button>
+
+                    <div class="cart">
+                        <p>Cart({{cart}})</p>
+                    </div>
+
+                    <!-- <ul>
+                        <ul v-for="size in sizes" style="display: inline;">{{size}}</ul>
+                    </ul> -->
                 </div>
             </div>
         </div>
