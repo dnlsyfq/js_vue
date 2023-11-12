@@ -82,6 +82,7 @@ git checkout <branch-name>
 
 * V Bind use case
 ```
+<img v-bind:src="image">
 <img :src="image">
 <img :alt="descrition">
 <a :href="url">
@@ -89,6 +90,24 @@ git checkout <branch-name>
 <span :style="isActive">
 <span :disabled="isDisabled">
 
+```
+
+* Conditional rendering
+```
+<p v-if="inStock">In Stock</p>
+<p v-else>Out of Stock</p>
+```
+
+```
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+            <p v-else>Out of Stock</p>
+```
+
+
+* for visibility toggling
+```
+<p v-show="inStock">In Stock</p>
 ```
 
 ```
