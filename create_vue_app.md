@@ -45,3 +45,49 @@ const app = Vue.createApp({
 })
 
 ```
+
+---
+
+```
+ <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+      
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <!-- image goes here -->
+            <!-- <img v-bind:src="image"> -->
+            <img :src ="image"><br>
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+
+  </body>
+```
+
+```
+const app = Vue.createApp({
+    data() {
+        return {
+            product: 'Socks',
+            url:'https://github.com/',
+            image:'./assets/images/socks_green.jpg'
+        }
+    }
+})
+
+```
+
