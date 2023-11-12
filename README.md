@@ -61,18 +61,34 @@ const app = new Vue({
 });
 ```
 
-```
+
 ```
 <div id="app">
   <h2>Hello, {{ username }}</h2>
 </div>
----
+```
+
+```
+git stash
+git checkout <branch-name>
+```
 
 * JS expression in HTML
 ```
 <h1>{{ product}} </h1>
 <p> {{ firstName + ' ' + lastName }} </p>
 <span> {{ clicked ? true: false }} </span>
+```
+
+* V Bind use case
+```
+<img :src="image">
+<img :alt="descrition">
+<a :href="url">
+<div :class="isActive">
+<span :style="isActive">
+<span :disabled="isDisabled">
+
 ```
 
 ```
