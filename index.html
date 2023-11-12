@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Product App</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Mastery</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <!-- Import Vue.js -->
+  <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="nav-bar"></div>
 
-        <div class="nav-bar"></div>
+  <div class="cart">Cart({{ cart }})</div>
+  <product-display :premium="premium"></product-display>
 
-        <div id="app">
-            <div class="product">
-                <div class="product-image">
-                    <img v-bind:src="image">
-                </div>
-            
+</div>
 
+<<<<<<< HEAD
 
                 <div class="product-info">
                     <h1>{{product}}</h1>
@@ -61,9 +64,17 @@
                 </div>
             </div>
         </div>
+=======
+<!-- Import App -->
+<script src="./main.js"></script>
+>>>>>>> 6c473febee6ad46d4c1dc2758fd87ff7cc702a00
 
+<!-- Import Components -->
+<script src="./components/ProductDisplay.js"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-        <script src="main.js"></script>
-    </body>
+<!-- Mount App -->
+<script>
+  const mountedApp = app.mount('#app')
+</script>
+</body>
 </html>

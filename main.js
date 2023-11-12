@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var app = new Vue({
     el:'#app',
     data:{
@@ -31,3 +32,14 @@ var app = new Vue({
         }
     }
 })
+=======
+const app = Vue.createApp({
+    data(){
+        return {
+            cart:0,
+            premium: false
+        }
+    },
+    method: {}
+})
+>>>>>>> 6c473febee6ad46d4c1dc2758fd87ff7cc702a00
