@@ -68,6 +68,13 @@ const app = new Vue({
 </div>
 ---
 
+* JS expression in HTML
+```
+<h1>{{ product}} </h1>
+<p> {{ firstName + ' ' + lastName }} </p>
+<span> {{ clicked ? true: false }} </span>
+```
+
 ```
 <!DOCTYPE html>
 <html>
