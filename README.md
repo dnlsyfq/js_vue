@@ -2318,4 +2318,119 @@ const app = new Vue({
   methods: { resetForm: function() { ... } }
 });
 ```
->>>>>>> 6c473febee6ad46d4c1dc2758fd87ff7cc702a00
+### Styling with VUE
+
+```
+// method 1
+
+// method 2
+
+// method 3
+```
+
+```
+<h2 style="color:red">Breaking News</h2>
+
+<h2 v-bind:style="{ color: breakingNewsColor, 'font-size': breakingNewsFontSize }">Breaking News</h2>
+
+const app = new Vue({ 
+  data: { 
+    breakingNewsColor: 'red',
+    breakingNewsFontSize: '32px'
+  }
+});
+```
+```
+computed:
+    submitButtonColor: function() {
+      if (this.formIsValid) {
+        return '#4c7ef3';
+      } else {
+        return 'gray';
+      }
+    },
+    submitButtonCursor: function() {
+      if (this.formIsValid) {
+        return 'pointer';
+      } else {
+        return 'default';
+      }
+    }
+
+<button type="submit" v-bind:disabled="!formIsValid" v-bind:style="{ 'background-color': submitButtonColor, cursor: submitButtonCursor }">Confirm Tickets</button>
+```
+
+```
+<h2 v-bind:style="breakingNewsStyles">Breaking News</h2>
+
+const app = new Vue({ 
+  data: { 
+    breakingNewsStyles: { 
+      color: 'red',
+      'font-size': '32px'
+    }
+  }
+});
+```
+
+```
+<h2 v-bind:style="[newsHeaderStyles, breakingNewsStyles]">Breaking News</h2>
+
+const app = new Vue({ 
+  data: {
+    newsHeaderStyles: { 
+      'font-weight': 'bold', 
+      color: 'grey'
+    },
+    breakingNewsStyles: { 
+      color: 'red'
+    }
+  }
+});
+```
+
+### Class
+```
+<span v-bind:class="{ unread: hasNotifications }">Notifications</span>
+
+.unread {
+  background-color: blue;
+}
+
+const app = new Vue({
+  data: { notifications: [ ... ] },
+  computed: {
+    hasNotifications: function() {
+      return notifications.length > 0;
+    }
+  }
+}
+
+
+```
+
+### Class Arrays
+
+```
+<span v-bind:class="[{ unread: hasNotifications }, menuItemClass]">Notifications</span>
+
+const app = new Vue({
+  data: { 
+    notifications: [ ... ],
+    menuItemClass: 'menu-item'
+  },
+  computed: {
+    hasNotifications: function() {
+      return notifications.length > 0;
+    }
+  }
+}
+.menu-item {
+  font-size: 12px;
+}
+
+.unread {
+  background-color: blue;
+}
+
+```
