@@ -2434,3 +2434,16 @@ const app = new Vue({
 }
 
 ```
+
+### Directives
+All the v-* attributes in Vue are called directives
+
+```
+For now, let's just list some of them: v-bind, v-cloak, v-for, v-else, v-else-if, v-model, v-on, v-once, v-text, and v-html.
+```
+
+* v-model
+v-model directive is used to make forms reactive; it helps us update data on user input events
+```
+
+```
