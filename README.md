@@ -2,6 +2,9 @@
 ```
 npm install -g @vue/cli
 vue --version
+
+vue create <name>
+yarn serve
 ```
 
 ### CDN
